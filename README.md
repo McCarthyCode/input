@@ -32,10 +32,18 @@ If I'm being completely honest, I think this…
 <input id="text" name="text" placeholder="Text Input" type="text" class="bg-white border border-gray-400 indent-2 placeholder-gray-400 rounded shadow-lg text-black w-56">Hello, World!</input>
 ```
 
+## My Implementation
+
+### Mockup
+
 ![My render, in light and dark modes](public/render.png)
 
 > [!WARNING]
-> As of writing, this is a WIP for demostration purposes only. The only components that are implemented the way I'd like are `InputButton` and `InputText` (i.e. the basics). This is due to time constraints.
+> As of writing, this is a WIP for demonstration purposes only. The only components that are implemented the way I'd like are `InputButton` and `InputText` (i.e. the basics; see #1). This was due entirely to time constraints.
+
+### Storybook
+
+![How the current implementation looks in Storybook](public/storybook.png)
 
 ### The Stack
 

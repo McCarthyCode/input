@@ -34,7 +34,7 @@ If I'm being completely honest, I think this…
 
 ## My Implementation
 
-### Mockup
+### Render
 
 ![My render, in light and dark modes](public/render.png)
 

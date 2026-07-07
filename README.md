@@ -39,7 +39,7 @@ If I'm being completely honest, I think this…
 ![My render, in light and dark modes](public/render.png)
 
 > [!WARNING]
-> As of writing, this is a WIP for demonstration purposes only. The only components that are implemented the way I'd like are `InputButton` and `InputText` (i.e. the basics; see #1). This was due entirely to time constraints.
+> As of writing, this is a WIP for demonstration purposes only. The only components that are implemented the way I'd like are `InputButton` and `InputText` (i.e. the basics; see https://github.com/McCarthyCode/input/issues/1). This was due entirely to time constraints.
 
 ### Storybook
 

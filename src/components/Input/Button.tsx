@@ -1,10 +1,10 @@
-interface ButtonProps {
-  id?: string
-  name: string
+import type { Input, InputProps } from "./Input"
+
+interface ButtonProps extends InputProps {
   value: string
 }
 
-export default function Button({ id, name, value }: ButtonProps) {
+export default function Button({ id, name, value }: ButtonProps): Input {
   return (
     <input type="button" id={id || name} name={name} value={value} className="
       bg-emerald-700

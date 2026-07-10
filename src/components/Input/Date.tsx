@@ -1,10 +1,10 @@
-interface DateProps {
-  id?: string
-  name: string
+import type { Input, InputProps } from "./Input"
+
+interface DateProps extends InputProps {
   value?: string
 }
 
-export default function Date({ id, name, value }: DateProps) {
+export default function Date({ id, name, value }: DateProps): Input {
   return (
     <input type="date" id={id || name} name={name} value={value} className="
       bg-white

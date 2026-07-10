@@ -1,10 +1,10 @@
-interface SubmitProps {
-  id?: string
-  name: string
+import type { Input, InputProps } from "./Input"
+
+interface SubmitProps extends InputProps {
   value: string
 }
 
-export default function Submit({ id, name, value }: SubmitProps) {
+export default function Submit({ id, name, value }: SubmitProps): Input {
   return (
     <input type="submit" id={id || name} name={name} value={value} className="
       bg-emerald-700

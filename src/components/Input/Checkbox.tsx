@@ -1,14 +1,14 @@
 import { useState, type ChangeEventHandler } from "react"
 
-interface CheckboxProps {
-  id?: string
-  name: string
+import type { Input, InputProps } from "./Input"
+
+interface CheckboxProps extends InputProps {
   label?: string
   checked?: boolean
   onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
-export default function Checkbox({ id, name, label, checked, onChange }: CheckboxProps) {
+export default function Checkbox({ id, name, label, checked, onChange }: CheckboxProps): Input {
   let [check, setCheck] = useState(checked)
 
   const checkBox: ChangeEventHandler<HTMLInputElement> = (e) => {

@@ -1,11 +1,11 @@
-interface InputTextProps {
-  name: string;
-  id?: string;
-  placeholder?: string;
-  value?: string;
+interface TextProps {
+  name: string
+  id?: string
+  placeholder?: string
+  value?: string
 }
 
-export default function InputText({ id, name, placeholder, value }: InputTextProps) {
+export default function Text({ id, name, placeholder, value }: TextProps) {
   return (
     <input id={id || name} name={name} placeholder={placeholder} type='text' value={value} className="
       bg-white

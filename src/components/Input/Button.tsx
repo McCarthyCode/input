@@ -1,10 +1,10 @@
-interface InputButtonProps {
-  id?: string;
-  name: string;
-  value: string;
+interface ButtonProps {
+  id?: string
+  name: string
+  value: string
 }
 
-export default function InputButton({ id, name, value }: InputButtonProps) {
+export default function Button({ id, name, value }: ButtonProps) {
   return (
     <input type="button" id={id || name} name={name} value={value} className="
       bg-emerald-700

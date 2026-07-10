@@ -23,7 +23,7 @@ Sure, I agree a NPM package for a slider is overkill. But I wanted to see exactl
 If I'm being completely honest, I think this…
 
 ```
-<InputText name="text" placeholder="Text Input" value="Hello, World!" />
+<Text name="text" placeholder="Text Input" value="Hello, World!" />
 ```
 
 …reads much more cleanly than this.
@@ -38,8 +38,10 @@ If I'm being completely honest, I think this…
 
 ![My render, in light and dark modes](public/render.png)
 
-> [!WARNING]
-> As of writing, this is a WIP for demonstration purposes only. The only components that are implemented the way I'd like are `InputButton` and `InputText` (i.e. the basics; see https://github.com/McCarthyCode/input/issues/1). This was due entirely to time constraints.
+All 19 HTML input types are implemented as standalone components under `src/components/Input/` ([#1](https://github.com/McCarthyCode/input/issues/1)), each paired with a matching Storybook story. They're wrapped in a `Form` component (`src/components/Form.tsx`) that renders a real `<form>` element with working native submit/reset behavior, and a `FieldList` component (`src/components/FieldList.tsx`) reproduces the label + input grid layout used on the demo page ([#3](https://github.com/McCarthyCode/input/issues/3)).
+
+> [!NOTE]
+> Wiring the form up to an actual API is intentionally out of scope for now — that'll be a follow-up issue.
 
 ### Storybook
 
@@ -51,7 +53,9 @@ If I'm being completely honest, I think this…
 
 ### Features
 
-- Independent React components
+- Independent React components for every HTML input type, each extending a shared `InputProps` base (`id`, `name`) and returning a common `Input` element type (`src/components/Input/Input.ts`)
 - Input fields extended to _all_ types, not just what's shown in the image
+- A `Form` component wrapping inputs in a real `<form>`, with working native submit/reset behavior
+- A `FieldList` component that lays inputs out in the label + input grid shown above
 - Light/Dark scheme awareness (based on system and browser settings)
 - Responsive layout (that is, the list collapses on smaller screens)

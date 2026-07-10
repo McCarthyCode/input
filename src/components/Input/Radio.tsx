@@ -1,15 +1,15 @@
 import type { ChangeEventHandler } from "react"
 
-interface RadioProps {
-  id?: string
-  name: string
+import type { Input, InputProps } from "./Input"
+
+interface RadioProps extends InputProps {
   value: string
   label?: string
   checked: boolean
   onChange: ChangeEventHandler<HTMLInputElement>
 }
 
-export default function Radio({ id, name, value, label, checked, onChange }: RadioProps) {
+export default function Radio({ id, name, value, label, checked, onChange }: RadioProps): Input {
   return (
     <span className="flex leading-4">
       <input type="radio" id={id || `${name}-${value}`} name={name} value={value} checked={checked} onChange={onChange}

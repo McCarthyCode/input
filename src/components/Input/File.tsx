@@ -1,14 +1,14 @@
 import type { ChangeEventHandler } from "react"
 
-interface FileProps {
-  id?: string
-  name: string
+import type { Input, InputProps } from "./Input"
+
+interface FileProps extends InputProps {
   accept?: string
   multiple?: boolean
   onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
-export default function File({ id, name, accept, multiple, onChange }: FileProps) {
+export default function File({ id, name, accept, multiple, onChange }: FileProps): Input {
   return (
     <input type="file" id={id || name} name={name} accept={accept} multiple={multiple} onChange={onChange} className="
       cursor-pointer
@@ -20,7 +20,9 @@ export default function File({ id, name, accept, multiple, onChange }: FileProps
       file:px-2
       file:rounded
       file:text-black
+      mb-8
       rounded
+      sm:m-0
       w-56
     " />
   )

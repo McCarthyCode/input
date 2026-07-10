@@ -3,27 +3,28 @@ import {
   type ChangeEventHandler,
   type InputEventHandler
 } from 'react'
-import InputText from './components/InputText'
-import InputButton from './components/InputButton'
+import Text from './components/Input/Text'
+import Button from './components/Input/Button'
+import Checkbox from './components/Input/Checkbox'
+import Color from './components/Input/Color'
+import Radio from './components/Input/Radio'
+import DatetimeLocal from './components/Input/DatetimeLocal'
+import Date from './components/Input/Date'
+import Email from './components/Input/Email'
+import File from './components/Input/File'
+import Month from './components/Input/Month'
+import Number from './components/Input/Number'
+import Password from './components/Input/Password'
+import Range from './components/Input/Range'
+import Reset from './components/Input/Reset'
+import Search from './components/Input/Search'
+import Submit from './components/Input/Submit'
+import Time from './components/Input/Time'
+import Url from './components/Input/Url'
+import Week from './components/Input/Week'
 
 function App() {
-  const [checks, setCheck] = useState({ 'checkbox1': true, 'checkbox2': false })
-  const [color, setColor] = useState('#007a55')
   const [radio, setRadio] = useState('radio1')
-
-  const checkBox: ChangeEventHandler<HTMLInputElement> = (e) => {
-    const { checked, name } = e.currentTarget
-
-    setCheck(values => ({ ...values, [name]: checked }))
-  }
-
-  const pickColor: InputEventHandler<HTMLInputElement> = (e) => {
-    setColor(e.currentTarget.value)
-  }
-
-  const typeColor: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setColor(e.currentTarget.value)
-  }
 
   const pickRadio: ChangeEventHandler<HTMLInputElement> = (e) => {
     setRadio(e.currentTarget.value)
@@ -69,7 +70,7 @@ function App() {
             <code>{'<input type="button">'}</code>
           </p>
           <div className="sm:text-start">
-            <InputButton name="button" value="Styled Button" />
+            <Button name="button" value="Styled Button" />
           </div>
           {/* <input type="checkbox" /> */}
           <p className="
@@ -96,46 +97,8 @@ function App() {
               justify-between
               w-56
             ">
-              <span className="
-                flex
-                leading-4
-              ">
-                <input type="checkbox" name="checkbox1" id="checkbox1" className="
-                  accent-emerald-700
-                  border
-                  cursor-pointer
-                  drop-shadow
-                  h-4
-                  rounded
-                  w-4
-                " checked={checks.checkbox1} onChange={checkBox}
-                />
-                <label htmlFor="checkbox1" className="
-                  cursor-pointer
-                  ps-2
-                ">Interactive</label>
-              </span>
-              <span className="
-                flex
-                leading-4
-              ">
-                <input type="checkbox" name="checkbox2" id="checkbox2" className="
-                  accent-emerald-700
-                  bg-neutral-secondary-medium
-                  border
-                  border-default-medium
-                  cursor-pointer
-                  drop-shadow
-                  h-4
-                  rounded
-                  w-4
-                " checked={checks.checkbox2} onChange={checkBox}
-                />
-                <label htmlFor="checkbox2" className="
-                  cursor-pointer
-                  ps-2
-                ">Checkbox</label>
-              </span>
+              <Checkbox name="checkbox1" label="Interactive" checked={true} />
+              <Checkbox name="checkbox2" label="Checkbox" />
             </div>
           </div>
           {/* <input type="color" /> */}
@@ -154,34 +117,7 @@ function App() {
             sm:justify-start
             w-full
           ">
-            <span className="
-              flex
-              gap-2
-              w-56
-            ">
-              <input type="color" id="color" name="color" value={color} className="
-                bg-white
-                border
-                border-gray-400
-                h-8
-                px-0.5
-                rounded
-                shadow-lg
-                w-8
-              " onInput={pickColor} />
-              <input type="text" name="color-val" id="color-val" value={color} placeholder="Hex Value" className="
-                bg-white
-                border
-                border-gray-400
-                h-8
-                indent-2
-                px-0.5
-                rounded
-                shadow-lg
-                text-black
-                w-46
-              " onChange={typeColor} />
-            </span>
+            <Color name="color" value="#007a55" />
           </div>
           {/* <input type="date" /> */}
           <p className="
@@ -192,20 +128,7 @@ function App() {
             <code>{'<input type="date">'}</code>
           </p>
           <div className="sm:text-start">
-            <input type="date" id="text" name="text" placeholder="Date" className="
-              bg-white
-              border
-              border-gray-400
-              h-8
-              indent-2
-              mb-8
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              sm:m-0
-              text-black
-              w-56
-            "  />
+            <Date name="date" />
           </div>
           {/* <input type="datetime-local" /> */}
           <p className="
@@ -220,18 +143,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="datetime-local" id="datetime-local" name="datetime-local" className="
-              bg-white
-              border
-              border-gray-400
-              h-8
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              text-black
-              w-56
-            "  />
+            <DatetimeLocal name="datetime-local" />
           </div>
           {/* <input type="email" /> */}
           <p className="
@@ -246,17 +158,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="email" id="email" name="email" placeholder="Email Address" className="
-              bg-white
-              border
-              border-gray-400
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              text-black
-              w-56
-            " />
+            <Email name="email" placeholder="Email Address" />
           </div>
           {/* <input type="file" /> */}
           <p className="
@@ -271,19 +173,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="file" id="file" name="file" placeholder="file" className="
-              cursor-pointer
-              file:bg-gray-300
-              file:border
-              file:border-gray-400
-              file:cursor-pointer
-              file:mr-3
-              file:px-2
-              file:rounded
-              file:text-black
-              rounded
-              w-56
-            " />
+            <File name="file" />
           </div>
           {/* <input type="month" /> */}
           <p className="
@@ -298,19 +188,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="month" id="month" name="month" className="
-              bg-white
-              border
-              border-gray-400
-              h-8
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              shrink
-              text-black
-              w-56
-            " />
+            <Month name="month" />
           </div>
           {/* <input type="number" /> */}
           <p className="
@@ -325,17 +203,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="number" id="number" name="number" placeholder="Number Input" className="
-              bg-white
-              border
-              border-gray-400
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              text-black
-              w-56
-            " />
+            <Number name="number" placeholder="Number Input" />
           </div>
           {/* <input type="password" /> */}
           <p className="
@@ -350,18 +218,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="password" id="password" name="password" placeholder="Password Input" className="
-              bg-white
-              border
-              border-gray-400
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              shrink
-              text-black
-              w-56
-            " />
+            <Password name="password" placeholder="Password Input" />
           </div>
           {/* <input type="radio" /> */}
           <p className="
@@ -388,64 +245,9 @@ function App() {
               justify-between
               w-56
             ">
-              <span className="
-                flex
-                leading-4
-              ">
-                <input type="radio" name="radio" id="radio1" value="radio1" className="
-                  accent-emerald-700
-                  border
-                  cursor-pointer
-                  drop-shadow
-                  h-4
-                  rounded
-                  w-4
-                " checked={radio === 'radio1'} onChange={pickRadio} />
-                <label htmlFor="radio1" className="
-                  cursor-pointer
-                  ps-1
-                ">Option</label>
-              </span>
-              <span className="
-                flex
-                leading-4
-              ">
-                <input type="radio" name="radio" id="radio2" className="
-                  accent-emerald-700
-                  bg-neutral-secondary-medium
-                  border
-                  border-default-medium
-                  cursor-pointer
-                  drop-shadow
-                  h-4
-                  rounded
-                  w-4
-                " onChange={pickRadio} />
-                <label htmlFor="radio2" className="
-                  cursor-pointer
-                  ps-1
-                ">Radio</label>
-              </span>
-              <span className="
-                flex
-                leading-4
-              ">
-                <input type="radio" name="radio" id="radio3" className="
-                  accent-emerald-700
-                  bg-neutral-secondary-medium
-                  border
-                  border-default-medium
-                  cursor-pointer
-                  drop-shadow
-                  h-4
-                  rounded
-                  w-4
-                " onChange={pickRadio} />
-                <label htmlFor="radio3" className="
-                  cursor-pointer
-                  ps-1
-                ">Option</label>
-              </span>
+              <Radio name="radio" value="radio1" label="Option" checked={radio === 'radio1'} onChange={pickRadio} />
+              <Radio name="radio" value="radio2" label="Radio" checked={radio === 'radio2'} onChange={pickRadio} />
+              <Radio name="radio" value="radio3" label="Option" checked={radio === 'radio3'} onChange={pickRadio} />
             </div>
           </div>
           {/* <input type="range" /> */}
@@ -461,12 +263,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="range" id="range" name="range" className="
-              accent-emerald-700
-              bg-transparent
-              range
-              w-56
-            " />
+            <Range name="range" />
           </div>
           {/* <input type="reset" /> */}
           <p className="
@@ -478,20 +275,7 @@ function App() {
             <code>{'<input type="reset">'}</code>
           </p>
           <div className="sm:text-start">
-            <input type="reset" id="reset" name="reset" value="Clear Input Form" className="
-              bg-gray-300
-              border
-              border-gray-400
-              cursor-pointer
-              h-8
-              mb-8
-              rounded
-              shadow-lg
-              shrink
-              sm:m-0
-              text-black
-              w-56
-            " />
+            <Reset name="reset" value="Clear Input Form" />
           </div>
           {/* <input type="search" /> */}
           <p className="
@@ -506,18 +290,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="search" id="search" name="search" placeholder="Search" className="
-              bg-white
-              border
-              border-gray-400
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              shrink
-              text-black
-              w-56
-            " />
+            <Search name="search" placeholder="Search" />
           </div>
           {/* <input type="submit" /> */}
           <p className="
@@ -529,19 +302,7 @@ function App() {
             <code>{'<input type="submit">'}</code>
           </p>
           <div className="sm:text-start">
-            <input type="submit" id="submit" name="submit" value="Submit" className="
-              bg-emerald-700
-              cursor-pointer
-              h-8
-              mb-8
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              shrink
-              sm:m-0
-              text-white
-              w-56
-            " />
+            <Submit name="submit" value="Submit" />
           </div>
           {/* <input type="text" /> */}
           <p className="
@@ -556,7 +317,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <InputText name="text" placeholder="Text Input" />
+            <Text name="text" placeholder="Text Input" />
           </div>
           {/* <input type="time" /> */}
           <p className="
@@ -571,18 +332,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="time" id="text" name="text" placeholder="Time" className="
-              bg-white
-              border
-              border-gray-400
-              h-8
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              text-black
-              w-56
-            "  />
+            <Time name="time" />
           </div>
           {/* <input type="url" /> */}
           <p className="
@@ -597,17 +347,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="url" id="url" name="url" placeholder="Web Address" className="
-              bg-white
-              border
-              border-gray-400
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              text-black
-              w-56
-            " />
+            <Url name="url" placeholder="Web Address" />
           </div>
           {/* <input type="week" /> */}
           <p className="
@@ -622,19 +362,7 @@ function App() {
             sm:m-0
             sm:text-start
           ">
-            <input type="week" id="week" name="week" className="
-              bg-white
-              border
-              border-gray-400
-              h-8
-              indent-2
-              placeholder-gray-400
-              rounded
-              shadow-lg
-              shrink
-              text-black
-              w-56
-            " />
+            <Week name="week" />
           </div>
         </div>
       </main >
